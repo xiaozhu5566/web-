@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="like">dislike</button>
+    <script>
+        var likeBtn = document.getElementById('like');
+        likeBtn.addEventListener('click',function(){
+            if(likeBtn.innerHTML == 'dislike'){
+                likeBtn.innerHTML = 'like';
+                likeBtn.style.color = 'red';
+            }else{
+                likeBtn.innerHTML = 'dislike';
+                likeBtn.style.color = 'black';
+            }
+        })
+    </script>
+</body>
+</html>

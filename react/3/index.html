@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        var obg = {
+            name : 'Ben',
+            f : function(){
+                // console.log(this);  // obg对象
+                setTimeout(function(){
+                    // console.log(this); //window对象
+                    console.log(this.name + 'f()')
+                },1000)
+            },
+            
+            // 箭头函数在哪个对象中调用，this就指向这个对象
+            fn : function(){
+                setTimeout(
+                    () => {console.log(this.name + 'fn()')}    
+                ,1000)
+            }
+        }
+    </script>
+</body>
+</html>

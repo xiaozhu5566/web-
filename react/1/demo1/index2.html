@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="like">dislike</button>
+    <script>
+        /**
+         * MVC模式
+        */
+        var likeBtn = document.getElementById('like');
+        
+        //定义数据 -- 喜欢有关的状态  
+        var state = {
+            like: false,
+            color: 'black'
+        }
+
+        //定义改变数据的方法
+        var setState = function (newstate) {
+            //解构
+            state = {
+                ...state,
+                ...newstate
+            }
+            
+            //渲染HTML
+            render()
+        }
+
+        //渲染的方法 
+        var render = function () {
+            if (state.like) {
+                //喜欢
+                likeBtn.innerHTML = "like";
+                likeBtn.style.color = state.color;
+            } else {
+                //不喜欢
+                likeBtn.innerHTML = "dislike";
+                likeBtn.style.color = state.color;
+            }
+        }
+
+        //监听
+        likeBtn.addEventListener('click', function () {
+            setState({
+                like: !state.like,
+                color: 'RED'
+            })
+        })
+
+    </script>
+</body>
+
+</html>
